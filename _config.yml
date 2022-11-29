@@ -23,8 +23,8 @@ title: dametimeee's Blog                          # the main title
 
 tagline: 안녕하세요. 개발일지입니다.   # it will display as the sub-title
 
-description: >-                        # used by seo meta and the atom feed
-  dametimeee, devleoper
+description:                      # used by seo meta and the atom feed
+dametimeee, devleoper
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://dametimeee.github.io'
@@ -54,7 +54,7 @@ google_site_verification: yIrEDI_99RwSfe5Igut4umcDF-rSaRt2l35xWc77djo         # 
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id:                 # fill in your Google Analytics ID
+  id: UA-250314040-1           # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine

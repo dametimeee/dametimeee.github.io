@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 
 title: dametimeee's Blog                          # the main title
 
-tagline: 안녕하세요. 개발일지입니다.   # it will display as the sub-title
+tagline: 안녕하세요. 일단은 devlog입니다.   # it will display as the sub-title
 
 description: dametimeee, devleoper                    # used by seo meta and the atom feed
 
@@ -80,7 +80,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: assets/img/favicons/favicon.ico
 
 # boolean type, the global switch for ToC in posts.
 toc: true

@@ -1,5 +1,7 @@
 ﻿---
-title: git error src refspec master does not match any
+title: 깃 에러 src refspec master does not match any
+categories: [Git, Github]
+tags: [Git, Git Error]
 ---
 
 ## 발단

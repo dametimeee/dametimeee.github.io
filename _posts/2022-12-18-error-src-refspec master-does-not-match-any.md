@@ -1,7 +1,7 @@
 ﻿---
 title: 깃 에러 src refspec master does not match any
-categories: [Git, Github]
-tags: [Git, Git Error]
+categories: [Git]
+tags: [Git, GitHub, Git Error]
 ---
 
 ## 발단

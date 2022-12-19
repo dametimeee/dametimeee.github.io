@@ -98,10 +98,13 @@ blockquote {
     color: var(--prompt-text-color);
 
     &::before {
-      font-family: "Font Awesome 5 Free";
       text-align: center;
       width: 1.25rem;
       margin-right: 0.75rem;
+      position: relative;
+      top: 0.4rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
     }
 
     > div {
@@ -113,7 +116,7 @@ blockquote {
     }
   }
 
-  @include prompt("tip", "\f0eb", 400);
+  @include prompt("tip", "\f0eb", "regular");
   @include prompt("info", "\f06a");
   @include prompt("warning", "\f06a");
   @include prompt("danger", "\f071");
@@ -173,29 +176,25 @@ footer {
   }
 }
 
-i { /* fontawesome icons */
+i {
+  /* fontawesome icons */
   &.far,
   &.fas {
     @extend %no-cursor;
   }
 }
 
-@-webkit-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 img[data-src] {
   margin: 0.5rem 0;
 
-  &[data-loaded="true"] {
-    -webkit-animation: fade-in linear 0.5s;
-    animation: fade-in linear 0.5s;
+  &.lazyload,
+  &.lazyloading {
+    opacity: 0;
+  }
+
+  &.lazyloaded {
+    opacity: 1;
+    transition: opacity 0.5s;
   }
 
   &.left {
@@ -333,7 +332,7 @@ img[data-src] {
 
   /* [scroll-focus] added by `smooth-scroll.js` */
   @at-root sup:target:not([scroll-focus]),
-  sup[scroll-focus=true] > a#{&} {
+    sup[scroll-focus="true"] > a#{&} {
     background-color: var(--footnote-target-bg);
   }
 }
@@ -386,7 +385,7 @@ img[data-src] {
         }
       }
     } /* tbody */
-  }/* table */
+  } /* table */
 }
 
 /* --- post --- */
@@ -490,7 +489,8 @@ img[data-src] {
       list-style-type: none;
       padding-left: 0;
 
-      > i { /* checkbox icon */
+      > i {
+        /* checkbox icon */
         width: 2rem;
         margin-left: -1.25rem;
         color: var(--checkbox-color);
@@ -590,7 +590,8 @@ img[data-src] {
   @include no-text-decoration;
 }
 
-.tooltip-inner { /* Overrided BS4 Tooltip */
+.tooltip-inner {
+  /* Overrided BS4 Tooltip */
   font-size: 0.7rem;
   max-width: 220px;
   text-align: left;
@@ -649,8 +650,8 @@ $sidebar-display: "sidebar-display";
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   a {
     @extend %sidebar-links;
@@ -759,7 +760,8 @@ $sidebar-display: "sidebar-display";
           width: 100%;
         }
 
-        &::after { /* the cursor */
+        &::after {
+          /* the cursor */
           display: table;
           visibility: hidden;
           content: "";
@@ -848,9 +850,9 @@ $sidebar-display: "sidebar-display";
       border-radius: 50%;
     }
   } /* .sidebar-bottom */
-} 
-#sidebar{
-  background: url('/assets/img/river.jpg');
+}
+#sidebar {
+  background: url("/assets/img/river.jpg");
   background-size: 100% 100%;
   background-position: center;
 }
@@ -896,7 +898,8 @@ $sidebar-display: "sidebar-display";
 }
 
 #topbar {
-  i { /* icons */
+  i {
+    /* icons */
     color: #999999;
   }
 
@@ -940,7 +943,8 @@ $sidebar-display: "sidebar-display";
   }
 }
 
-#search-cancel { /* 'Cancel' link */
+#search-cancel {
+  /* 'Cancel' link */
   color: var(--link-color);
   margin-left: 1rem;
   display: none;
@@ -961,9 +965,15 @@ $sidebar-display: "sidebar-display";
     background: center;
 
     &.form-control {
-      &::-moz-placeholder { @include input-placeholder; }
-      &::-webkit-input-placeholder { @include input-placeholder; }
-      &::placeholder { @include input-placeholder; }
+      &::-moz-placeholder {
+        @include input-placeholder;
+      }
+      &::-webkit-input-placeholder {
+        @include input-placeholder;
+      }
+      &::placeholder {
+        @include input-placeholder;
+      }
     }
   }
 }
@@ -1017,7 +1027,8 @@ $sidebar-display: "sidebar-display";
       margin-bottom: 1rem;
     }
 
-    i { /* icons */
+    i {
+      /* icons */
       color: #818182;
       margin-right: 0.15rem;
       font-size: 80%;
@@ -1214,7 +1225,9 @@ $sidebar-display: "sidebar-display";
   }
 
   #core-wrapper {
-    min-height: calc(100vh - #{$topbar-height} - #{$footer-height-mobile}) !important;
+    min-height: calc(
+      100vh - #{$topbar-height} - #{$footer-height-mobile}
+    ) !important;
 
     h1 {
       margin-top: 2.2rem;
@@ -1549,7 +1562,9 @@ $sidebar-display: "sidebar-display";
   }
 
   #search-wrapper {
-    margin-right: calc(#{$main-content-max-width} * 0.25 - #{$search-max-width});
+    margin-right: calc(
+      #{$main-content-max-width} * 0.25 - #{$search-max-width}
+    );
   }
 
   #topbar,
@@ -1564,7 +1579,9 @@ $sidebar-display: "sidebar-display";
   }
 
   #back-to-top {
-    right: calc((100vw - #{$sidebar-width-large} - #{$main-content-max-width}) / 2 + 2rem);
+    right: calc(
+      (100vw - #{$sidebar-width-large} - #{$main-content-max-width}) / 2 + 2rem
+    );
   }
 
   #sidebar {

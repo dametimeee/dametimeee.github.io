@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dametimeee.github.io/sitemap.xml

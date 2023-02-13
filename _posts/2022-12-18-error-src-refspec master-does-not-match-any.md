@@ -2,6 +2,9 @@
 title: 깃 에러 src refspec master does not match any
 categories: [Git]
 tags: [Git, GitHub, Git Error]
+sitemap:
+  changefreq: daily
+  priority: 1.0
 ---
 
 ## 발단
